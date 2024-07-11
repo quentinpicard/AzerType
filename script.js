@@ -8,13 +8,35 @@
 // }
 
 const listeMots = ['Cachalot', 'Pétunia', 'Serviette'];
+const listePhrases = ['Pas de panique !', 'La vie, l’univers et le reste', 'Merci pour le poisson'];
 let score = 0 ;
-let motsChoisie = Math.floor(Math.random()*listeMots.length)
-let motUtilisateur = listeMots[motsChoisie];
-let testMots = prompt('Entres le mot : ' + motUtilisateur);
+let choixJeux = prompt("Ecrivez le mot 'Phrases' ou 'Mots', pour choisir votre type de jeu :)");
 
-if (testMots == listeMots[motsChoisie]){
-    console.log("Bravo !");
+
+while (choixJeux !== 'Mots' && choixJeux !== 'Phrases'){
+    choixJeux = prompt("Ecrivez le mot 'Phrases' ou 'Mots', pour choisir votre type de jeu :)");
+}
+
+if (choixJeux === 'Mots'){
+    for (let i=0; i<=listeMots.length-1; i++){
+        let testMots = prompt('Entres le mot : ' + listeMots[i]);
+    
+       if (testMots === listeMots[i]) {
+            score ++;
+       }else{
+        console.log('non');
+       }
+       console.log(score);
+    }
 }else{
-    console.log("Malheuresement, c'est faux !")
+    for (let i=0; i<=listePhrases.length-1; i++){
+        let testMots = prompt('Entres le mot : ' + listePhrases[i]);
+    
+       if (testMots === listePhrases[i]) {
+            score ++;
+       }else{
+        console.log('non');
+       }
+       console.log(score);
+    }
 }
