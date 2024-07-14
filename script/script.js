@@ -7,17 +7,19 @@ function choisirPhrasesOuMots (){
 }
 
 function lancerBoucleDeJeu (listeProposition){
+    let score = 0;
     for (let i=0; i<=listeProposition.length-1; i++){
         let testMots = prompt('Entres le mot : ' + listeProposition[i]);
     
        if (testMots === listeProposition[i]) {
-            score ++;
+            score ++;       
        }
     }
+    return score;
 }
 
 function lancerJeu (){
-    let score = 0 ;
+    let score = 0; 
     let choixJeux = prompt("Ecrivez le mot 'Phrases' ou 'Mots', pour choisir votre type de jeu :)");
 
     while (choixJeux !== 'Mots' && choixJeux !== 'Phrases'){
@@ -25,10 +27,10 @@ function lancerJeu (){
      }
      
      if (choixJeux === 'Mots'){
-         lancerBoucleDeJeu (listeMots);
+        score = lancerBoucleDeJeu (listeMots);
          
      }else{
-         lancerBoucleDeJeu (listePhrases);
+        score =  lancerBoucleDeJeu (listePhrases);
      }
      afficherResultat (score); 
 }
