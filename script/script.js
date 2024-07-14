@@ -1,5 +1,8 @@
 function afficherResultat (score) {
-    console.log('Votre score est de : ' + score);
+    let zoneScoreSelection = document.querySelector('.zoneScore span');
+    let  div = `${score}`;
+    zoneScoreSelection.innerHTML = div;
+    // console.log('Votre score est de : ' + score);
 }
 
 function choisirPhrasesOuMots (){
